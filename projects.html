@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Villages Construction</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #0d0d0d, #424343);
+      color: #ffffff;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(20, 20, 20, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: #ffffff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #cccccc;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 40px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card p {
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Villages Construction</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Our Work</h2>
+
+ <div class="gallery" id="gallery"></div>
+  </div>
+</div>
+<script>
+const images = [
+  {
+    url: "PASTE_IMAGE_LINK_HERE",
+    text: "Project 1"
+  },
+  {
+    url: "PASTE_IMAGE_LINK_HERE",
+    text: "Project 2"
+  }
+];
+
+const gallery = document.getElementById("gallery");
+
+images.forEach(img => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <img src="${img.url}">
+    <p>${img.text}</p>
+  `;
+
+  gallery.appendChild(card);
+});
+</script>
+
+</body>
+</html>
