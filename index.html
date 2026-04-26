@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Villages Construction </title>
+  <title>Villages Construction</title>
+
   <style>
     * {
       margin: 0;
@@ -12,34 +13,41 @@
       font-family: serif;
     }
 
-   body {
-  background: linear-gradient(to bottom, #0d0d0d, #424343);
-  color: #ffffff;
-}
+    body {
+      background: linear-gradient(to bottom, #0d0d0d, #424343);
+      color: #ffffff;
+      position: relative;
+    }
 
-  <header>
-  <div class="logo-container">
-    <img src="images/LOGO.png" alt="Villages Construction Logo">
-    <h1>Villages Construction</h1>
-  </div>
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(20, 20, 20, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
     .logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-.logo-container img {
-  height: 45px;
-  width: auto;
-}
+    .logo-container img {
+      height: 55px; /* adjust size here */
+      width: auto;
+    }
+
+    header h1 {
+      font-size: 22px;
+      color: #ffffff;
+    }
 
     nav a {
       color: white;
@@ -48,10 +56,11 @@
       font-weight: bold;
     }
 
-  nav a:hover {
-  color: #cccccc;
+    nav a:hover {
+      color: #cccccc;
     }
 
+    /* HERO */
     .hero {
       text-align: center;
       padding: 100px 20px;
@@ -72,19 +81,20 @@
     }
 
     .cta-btn {
-  background: rgba(66, 67, 67, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 15px 30px;
-  border-radius: 8px;
-  color: #ffffff;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+      background: rgba(66, 67, 67, 0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 15px 30px;
+      border-radius: 8px;
+      color: #ffffff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
     .cta-btn:hover {
-  background: rgba(66, 67, 67, 0.9);
-}
+      background: rgba(66, 67, 67, 0.9);
+    }
+
     section {
       padding: 60px 40px;
       max-width: 1100px;
@@ -94,83 +104,84 @@
     .section-title {
       text-align: center;
       margin-bottom: 40px;
-      color: #ffffff;
     }
 
+    /* SERVICES */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
-   .service {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 25px;
-  transition: all 0.3s ease;
-     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-    .service:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-    .service h3 {
-      margin-bottom: 10px;
-      color: #ffffff;
+    .service {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 25px;
+      transition: 0.3s;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
-    .about {
-  max-width: 800px;
-  margin: 60px auto;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 40px;
-  line-height: 1.8;
-}
+    .service:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.08);
+    }
 
-   footer {
-  text-align: center;
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.6);
-  margin-top: 80px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+    /* ABOUT */
+    .about {
+      max-width: 800px;
+      margin: 60px auto;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 40px;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.6);
+      margin-top: 80px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
     footer p {
       font-size: 14px;
-    }body {
-  position: relative;
-}
+    }
 
-body::after {
-  content: "";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  pointer-events: none;
-  background: linear-gradient(to bottom, transparent, #0d0d0d);
-}
+    /* FADE EFFECT */
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      pointer-events: none;
+      background: linear-gradient(to bottom, transparent, #0d0d0d);
+    }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Villages Construction </h1>
+  <div class="logo-container">
+    <!-- ⚠️ MAKE SURE THIS MATCHES YOUR FILE NAME -->
+    <img src="images/logo.png" alt="Villages Construction Logo">
+    <h1>Villages Construction</h1>
+  </div>
+
   <nav>
-  <a href="#services">Services</a>
-  <a href="#about">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -184,59 +195,42 @@ body::after {
   <div class="services">
     <div class="service">
       <h3>Residential Construction</h3>
-      <p>We build custom homes and residential projects with precision, quality materials, and attention to detail.</p>
+      <p>We build custom homes with precision and quality materials.</p>
     </div>
     <div class="service">
       <h3>Remodeling & Renovation</h3>
-      <p>Transform your existing space into something modern, functional, and visually appealing.</p>
+      <p>Transform your space into something modern and functional.</p>
     </div>
     <div class="service">
       <h3>Concrete & Foundations</h3>
-      <p>Strong, durable foundations and concrete work designed to last for years to come.</p>
+      <p>Durable concrete work designed to last for years.</p>
     </div>
     <div class="service">
       <h3>General Contracting</h3>
-      <p>Full-service project management from start to finish, ensuring smooth execution and on-time delivery.</p>
+      <p>Full project management from start to finish.</p>
     </div>
   </div>
 </section>
 
 <section id="about" class="about">
   <h2 class="section-title">About Us</h2>
- <p>
-  Villages Construction is a trusted name in delivering high-quality construction services 
-  built on a foundation of reliability, craftsmanship, and attention to detail. We specialize 
-  in residential construction, renovations, and general contracting, providing solutions that 
-  are tailored to each client’s unique vision and needs.
-
-  <br><br>
-
-  Led by owner Alexander Villegas, our company is committed to maintaining the highest standards 
-  in every project we take on. From the initial planning phase to the final execution, we focus 
-  on clear communication, efficient timelines, and exceptional results that stand the test of time.
-
-  <br><br>
-
-  At Villages Construction, we believe that every project is more than just a job—it’s an opportunity 
-  to build lasting relationships with our clients while creating spaces that are functional, durable, 
-  and visually outstanding. Our goal is to turn your ideas into reality with precision, professionalism, 
-  and pride in every detail.
-</p>
+  <p>
+    Villages Construction delivers high-quality construction services built on reliability,
+    craftsmanship, and attention to detail. We bring your vision to life with precision and professionalism.
+  </p>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact">
   <h2 class="section-title">Contact Us</h2>
   <p><strong>Phone:</strong> +1 (239) 763-0916</p>
   <p><strong>Email:</strong> alexander.villegas@villages-construction.com</p>
-  <p><strong>Owner:</strong> Alexander Villegas</p>
   <br>
   <a href="tel:+12397630916" class="cta-btn">Call Now</a>
 </section>
 
 <footer>
-  <p>© 2026 Villages Construction.</p>
+  <p>© 2026 Villages Construction</p>
 </footer>
 
 </body>
 </html>
-
