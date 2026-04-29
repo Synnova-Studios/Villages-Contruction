@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews | Villages Construction</title>
+
+  <style>
+    body {
+      font-family: serif;
+      background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+      margin: 0;
+    }
+
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      background: white;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .review-form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 12px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Villages Construction</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Customer Reviews</h2>
+
+  <div class="services" id="reviews-container"></div>
+
+  <h3>Leave a Review</h3>
+
+  <form class="review-form">
+    <input type="text" placeholder="Your Name" required>
+    <textarea placeholder="Write your review..." required></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBaOo-3otPXGd7zg65iWT22dHzNQqr3JRQ",
+    authDomain: "villages-construction.firebaseapp.com",
+    projectId: "villages-construction",
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const form = document.querySelector(".review-form");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = form.querySelector("input").value;
+    const review = form.querySelector("textarea").value;
+
+   await addDoc(collection(db, "reviews"), {
+  name,
+  review,
+  created: new Date(),
+  approved: false
+});
+
+    form.reset();
+    loadReviews();
+  });
+
+ async function loadReviews() {
+  const container = document.getElementById("reviews-container");
+  container.innerHTML = "";
+
+  const snapshot = await getDocs(collection(db, "reviews"));
+
+  snapshot.forEach((doc) => {
+    const data = doc.data();
+
+    // 🚫 Skip unapproved reviews
+    if (!data.approved) return;
+
+    const div = document.createElement("div");
+    div.className = "service";
+
+    div.innerHTML = `
+      <p>"${data.review}"</p>
+      <strong>- ${data.name}</strong>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+  loadReviews();
+</script>
+
+</body>
+</html>
