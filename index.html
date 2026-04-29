@@ -151,6 +151,31 @@
     footer p {
       font-size: 14px;
     }
+.review-form {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-form input,
+.review-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: serif;
+}
+
+.review-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.review-form button {
+  align-self: center;
+}
+    
   </style>
 </head>
 
@@ -160,11 +185,12 @@
   <h1>Villages Construction</h1>
 
   <nav>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#reviews">Reviews</a>
+  <a href="projects.html">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
 </header>
 
 <section class="hero">
@@ -218,7 +244,39 @@
 
   </p>
 </section>
+<section id="reviews">
+  <h2 class="section-title">Customer Reviews</h2>
 
+  <div class="services">
+
+    <div class="service">
+      <p>"Amazing work! The team was professional, on time, and delivered exactly what we wanted."</p>
+      <strong>- Sarah M.</strong>
+    </div>
+
+    <div class="service">
+      <p>"High quality craftsmanship and great communication throughout the entire project."</p>
+      <strong>- John D.</strong>
+    </div>
+
+    <div class="service">
+      <p>"They turned our vision into reality. Highly recommend Villages Construction!"</p>
+      <strong>- Carlos R.</strong>
+    </div>
+
+  </div>
+
+  <br><br>
+
+  <h3 style="text-align:center;">Leave a Review</h3>
+
+  <form class="review-form">
+    <input type="text" placeholder="Your Name" required>
+    <textarea placeholder="Write your review..." required></textarea>
+    <button type="submit" class="cta-btn">Submit Review</button>
+  </form>
+</section>
+  
 <section id="contact">
   <h2 class="section-title">Contact Us</h2>
   <p><strong>Phone:</strong> +1 (239) 763-0916</p>
